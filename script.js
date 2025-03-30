@@ -149,3 +149,10 @@ document.querySelector(".btn-our_menu").addEventListener("click", function(e){
     e.preventDefault();
     document.querySelector("#menu").scrollIntoView({behavior: "smooth"});
 })
+
+// menu toggler
+const menuOpen = document.querySelector(".menu-open");
+const menuClose = document.querySelector(".menu-close");
+document.querySelector(".control-buttons").addEventListener("click", function(e){
+  console.log(e.target);
+})

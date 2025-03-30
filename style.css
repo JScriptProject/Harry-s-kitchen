@@ -157,7 +157,7 @@ nav{
     justify-content: space-between;
 }
 
-nav .logo{
+.logo{
     color: var(--brand-white);
     font-weight: 700;
     font-size: 3rem;
@@ -166,6 +166,10 @@ nav .logo{
 .logo-highlight{
     color: var(--brand-orange);
     font-size: 4rem;
+}
+
+.mobo-logo{
+    display:none;
 }
 
 .nav-list{
@@ -834,21 +838,6 @@ footer p{
     color: var(--brand-greem);
 font-size: 1.5rem;
 }
-
-@media only screen and (max-width: 900px)
-{
-    /* .banner .content h1{
-        font-size: clamp(4rem, 5rem, 6rem);
-    } */
-   .banner .content p{
-    width: 70%;
-    margin: auto;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-   }
-   
-} 
-
 
 
 
