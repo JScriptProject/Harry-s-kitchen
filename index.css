@@ -1,62 +1,112 @@
-
-
 /* media queries  */
 
 /* mobile device */
-@media screen and (max-width: 400px){
-   header{
+@media screen and (max-width: 900px) {
+  header {
     padding: unset;
-    position:relative;
+    position: relative;
     z-index: 20;
-   }
-.mobo-logo{
-    display:block;
-    position:absolute;
-    left:2rem;
-}
-    nav{
-    display:none;
-    top:0;
-    left:0;
-    position:absolute;
-    width:100%;
-    height:100vh;
-    /* display:flex; */
-    flex-direction:column;
+  }
+  .mobo-logo {
+    display: block;
+    position: absolute;
+    left: 2rem;
+  }
+  nav {
+    /* display:none;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
     gap: 5rem;
     justify-content: flex-start;
     padding: 3rem;
-    background-color: rgb(32, 32, 32);
- }
- .nav-list{
-    display:flex;
-    flex-direction:column;
+ 
+    transform: translateY(200%);
+    transition: all 0.5s ease;
+    opacity: 0;
+    background:linear-gradient( #0000009f, #00000050), url("media/mbg1.jpg");
+    background-position: center;
+    background-size: cover;
+    overflow-y: hidden; */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 3rem;
+    overflow: hidden;
+  }
+
+  .bg-overlay {
+    position: absolute;
+    display:block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#0000009f, #00000050), url("media/mbg1.jpg");
+    background-position: center;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transform: scale(1);
+  }
+
+  body.no-scroll {
+    overflow: hidden;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     justify-content: flex-start;
     align-items: center;
+  }
+  .nav-list li a {
+    font-size: 2rem;
+  }
 
- }
- .nav-list li a{
-    font-size:2rem;
- }
-
- .control-buttons{
+  .control-buttons {
+    display: block;
     position: absolute;
     z-index: 100;
     top: 1rem;
-    right:1rem;
- }
+    right: 1rem;
+  }
 
- .menu-close i, .menu-open i{
+  .menu-close i,
+  .menu-open i {
     font-size: 3rem;
     color: #fff;
     cursor: pointer;
     position: relative;
     top: 1rem;
-    right:1rem;
- }
+    right: 1rem;
+  }
 
-  .menu-close{
-        display: none;
-}
+  .menu-close {
+    display: none;
+  }
+  .menu-open {
+    display: block;
+  }
+
+  .menu-show {
+    display: block;
+  }
+
+  .menu-hide {
+    display: none;
+  }
+  .d-flex {
+    display: flex;
+  }
 }
