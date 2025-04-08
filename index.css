@@ -257,6 +257,11 @@
 .expert-name{
   text-align:center;
 }
+
+.expert-experty{
+  text-align:center;
+  
+}
 }
 
 @media screen and (max-width: 600px) {
