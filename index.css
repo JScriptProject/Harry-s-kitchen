@@ -253,6 +253,10 @@
     font-size: 1.2rem;
     text-align: center;
   }
+
+.expert-name{
+  text-align:center;
+}
 }
 
 @media screen and (max-width: 600px) {
