@@ -360,6 +360,7 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1);
 }
 
 .about .fa-bacon {
@@ -403,22 +404,71 @@ nav {
     rgba(205, 93, 8, 0.2),
     #fff
   );
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; */
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
   padding: 3rem 3rem 14rem 3rem;
-  gap: 3rem;
+  gap: 2rem;
   box-shadow: 0 0 10px #1111113d;
   border-radius: 10px;
   border-bottom-left-radius: 55px;
+  overflow-x: visible ;
+}
+
+.card-group{
+  display:flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 100px;
+  perspective: 1000px;
 }
 
 .box {
+  /* flex:1;
   background-color: white;
   border-radius: 5px;
   border-bottom-left-radius: 35px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.237);
   border: 1px solid var(--brand-greem);
+  position:relative;
+  max-width: calc(33.33% - 2.5rem);
+  height:auto;
+  transition: transform 0.5s ease; */
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+
+/* center card comes forward */
+.center-box {
+  z-index: 3;
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* left card behind and shifted */
+.left-box {
+  z-index: 2;
+  transform: translateX(200px) scale(0.95);
+  opacity: 1;
+}
+
+/* right card behind and shifted */
+.right-box {
+  z-index: 2;
+  transform: translateX(-200px) scale(0.95);
+  opacity: 1;
 }
 
 .img-box {
@@ -488,9 +538,10 @@ nav {
 .menu-img-back {
   position: absolute;
   width: 250px;
+  opacity:1;
   height: auto;
   top: -13rem;
-  right: 25rem;
+  right: 10%;
   color: rgba(17, 17, 17, 0.1);
   animation: cup-rotate 30s ease-in-out infinite reverse;
 }
@@ -786,6 +837,10 @@ nav {
     letter-spacing: 3px;
 } */
 
+.input-box-btn{
+
+  text-align:start;
+ }
 .text-start-contact {
   position: relative;
   text-align: center;

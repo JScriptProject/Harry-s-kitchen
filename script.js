@@ -231,8 +231,211 @@ function menuCloseFn()
   
 }
 
+
+
 menuClose.addEventListener("click", function () {
    menuCloseFn();
 });
 
+// Scroll TRigger animations
 
+gsap.registerPlugin(ScrollTrigger);
+
+// mm.add("(min-width:900px)", () =>{
+//   gsap.utils.toArray(".sub-heading").forEach(subheading =>{
+//     gsap.fromTo(subheading, {
+//       fontSize:"75px",
+//       duration:1,
+//     },{fontSize:"30px", 
+//       duration:1, 
+//       scrollTrigger:{
+//         trigger:subheading,
+//         start:"top 80%",
+//         end:"top 40%",
+//         scrub:1,
+//       }
+//     })
+//   })
+// });
+
+mm.add("(min-width:900px)", () =>{
+  gsap.fromTo(".section_content-img-img",{
+    scale:1,
+    duration:5
+  },{
+    scale:2,
+    duration:5,
+    scrollTrigger:{
+      trigger:".section_content-img-img",
+      start:"top 90%",
+      end:"top -90%",
+      scrub:1,
+    }
+  })
+});
+
+mm.add("(min-width:900px)", () =>{
+  gsap.fromTo(".menu-img-back",{
+    right:"90%",
+    duration:1,
+    opacity:0.2,
+    width:"1000px",
+    top: "-20rem",
+  },{
+    right:"10%",
+    duration:1,
+    opacity:1,
+    width:"250px",
+    top: "-13rem",
+    scrollTrigger:{
+      trigger:".menu-img-back",
+      start:"top 70%",
+      end:"top 20%",
+      scrub:1,
+    }
+  })
+});
+
+// mm.add("(min-width:900px)", () =>{
+//   gsap.to(".left-box", {
+//     scrollTrigger: {
+//       trigger: ".section_content-inclosed-menu",
+//       start: "top center",
+//       end: "bottom center",
+//       scrub: true,
+//     },
+//     x: 0,
+//     scale: 1.05,
+//     zIndex: 3,
+//   });
+  
+//   gsap.to(".right-box", {
+//     scrollTrigger: {
+//       trigger: ".section_content-inclosed-menu",
+//       start: "top center",
+//       end: "bottom center",
+//       scrub: true,
+//     },
+//     x: 0,
+//     scale: 1.05,
+//     zIndex: 3,
+//   });
+  
+
+// });
+
+
+mm.add("(min-width:900px)", () =>{
+  gsap.fromTo(".menu-img-back",{
+    y:"90%",
+    duration:1,
+    opacity:0.5,
+  },{
+    y:"10%",
+    duration:1,
+    opacity:1,
+    scrollTrigger:{
+      trigger:".menu-img-back",
+      start:"top 90%",
+      end:"top 20%",
+      scrub:1,
+    }
+  })
+});
+
+mm.add("(min-width:900px)", () =>{
+  document.querySelectorAll(".card-group").forEach((group) => {
+    const left = group.querySelector(".left-box");
+    const right = group.querySelector(".right-box");
+  
+    gsap.fromTo(left, 
+      { opacity: 0, x: 200, scale: 0.9, rotateY:0 }, 
+      {
+        opacity: 1,
+        x: -30,
+        scale: 1,
+        duration: 1,
+        rotateY:10,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: group,
+          start: "top 80%",
+          end: "top 50%",
+          scrub: 1,
+          toggleActions: "play none none reverse"
+        }
+      });
+  
+    gsap.fromTo(right, 
+      { opacity: 0, x: -200, scale: 0.9, rotateY:0 }, 
+      {
+        opacity: 1,
+        x: 30,
+        scale: 1,
+        duration: 1,
+        rotateY:-10,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: group,
+          start: "top 75%",
+          end: "top 50%",
+          scrub: 1,
+          toggleActions: "play none none reverse"
+        }
+      });
+  });
+});
+
+// mm.add("(min-width:900px)", () =>{
+  
+// });
+
+
+
+
+
+
+
+
+
+
+// document.querySelectorAll(".card-group").forEach((group) => {
+//   const left = group.querySelector(".left-box");
+//   const right = group.querySelector(".right-box");
+
+//   gsap.fromTo(left, 
+//     { opacity: 0, x: 200, scale: 0.9, rotateY:0 }, 
+//     {
+//       opacity: 1,
+//       x: -30,
+//       scale: 1,
+//       duration: 1,
+//       rotateY:10,
+//       ease: "power3.out",
+//       scrollTrigger: {
+//         trigger: group,
+//         start: "top 80%",
+//         end: "top 50%",
+//         scrub: 1,
+//         toggleActions: "play none none reverse"
+//       }
+//     });
+
+//   gsap.fromTo(right, 
+//     { opacity: 0, x: -200, scale: 0.9, rotateY:0 }, 
+//     {
+//       opacity: 1,
+//       x: 30,
+//       scale: 1,
+//       duration: 1,
+//       rotateY:-10,
+//       ease: "power3.out",
+//       scrollTrigger: {
+//         trigger: group,
+//         start: "top 75%",
+//         end: "top 50%",
+//         scrub: 1,
+//         toggleActions: "play none none reverse"
+//       }
+//     });
+// });
